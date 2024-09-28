@@ -21,7 +21,7 @@ app.add_middleware(
 MAX_FILE_SIZE_MB = 5  # Maximum file size in MB
 ALLOWED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/gif"]
 
-# Utility function to check file size
+# Utility function to check file sizes
 def check_file_size(file: UploadFile):
     size_in_mb = len(file.file.read()) / (1024 * 1024)
     file.file.seek(0)  # Reset the file pointer after reading the size
