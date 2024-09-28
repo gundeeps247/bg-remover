@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor: Background, Crop, Resize</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Image Editor: Remove Background, Change Color, Crop, Resize</h1>
+    <div id="uploadContainer" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+        <p>Drag & Drop Images or Click to Upload</p>
+    </div>
+    <input type="file" id="uploadImage" accept="image/*" style="display: none;"><br><br>
+    <button id="removeButton" onclick="removeBackground()" disabled>Remove Background</button><br><br>
+    <div id="previewContainer"></div>
+    <p id="loading">Processing, please wait...</p>
+
+    <!-- Background Color Selection -->
+    <div id="colorSelection">
+        <p>Select a background color:</p>
+        <input type="color" id="bgColorPicker" value="#ffffff">
+        <button id="applyColorButton" onclick="applyBackgroundColor()">Change Background</button>
+    </div>
+
+    <!-- Image Cropping Section -->
+    <div id="cropSelection">
+        <p>Select a crop shape:</p>
+        <button onclick="applyCrop('square')">Square</button>
+        <button onclick="applyCrop('circle')">Circle</button>
+    </div>
+
+    <!-- Resize Section -->
+    <div id="resizeSection">
+        <p>Resize Image:</p>
+        <label>Width: <input type="number" id="resizeWidth" class="dimension-input" placeholder="Width"></label>
+        <label>Height: <input type="number" id="resizeHeight" class="dimension-input" placeholder="Height"></label>
+        <button onclick="resizeImage()">Apply Resize</button>
+    </div>
+
+    <!-- Format Selection and Download -->
+    <div id="formatSelection">
+        <p>Select a format to download:</p>
+        <label><input type="radio" name="format" value="png" checked> PNG</label><br>
+        <label><input type="radio" name="format" value="jpg"> JPG</label><br>
+        <label><input type="radio" name="format" value="jpeg"> JPEG</label><br>
+        <label><input type="radio" name="format" value="gif"> GIF</label><br>
+    </div>
+    <button id="formatButton" onclick="downloadImage()">Download Image</button>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Upload Container */
+#uploadContainer {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}   
+
+#uploadContainer.dragover {
+    border-color: #00aaff;
+    background-color: #f0f8ff;
+}
+
+/* Image Preview */
+.image-preview {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 200px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-preview img:hover {
+    transform: scale(1.05);
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    background-color: #f0f0f0;
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    height: 20px;
+    width: 0;
+    background-color: #4caf50;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    transition: width 0.4s ease;
+}
+
+/* Loading Text */
+#loading {
+    display: none;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #007bff;
+}
+
+/* Hidden Sections: Format, Color, Crop, Resize */
+#formatSelection, #colorSelection, #cropSelection, #resizeSection {
+    display: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+#formatButton, #applyCropButton {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Dimension Input */
+.dimension-input {
+    width: 60px;
+    padding: 5px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries: Mobile Optimization */
+@media (max-width: 768px) {
+    #uploadContainer {
+        width: 90%;
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    .image-preview img {
+        max-width: 100%;
+    }
+
+    .dimension-input {
+        width: 50px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #uploadContainer {
+        width: 95%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+
+    .dimension-input {
+        width: 40px;
+        margin: 0 5px;
+    }
+}
